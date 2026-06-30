@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pokédex X Pro | FAANG Edition</title>
+    
+    <!-- PWA Meta Tags & Manifest -->
+    <link rel="manifest" href="manifest.json">
+    <meta name="theme-color" content="#0f172a">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <link rel="apple-touch-icon" href="icon-192.png">
+    
+    <!-- External Fonts & Icons -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/js/all.min.js"></script>
+
+    <!-- Custom Styles -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="dark-mode">
+
+    <!-- 🌌 Living Background -->
+    <div class="bg-canvas">
+        <div class="orb primary"></div>
+        <div class="orb secondary"></div>
+        <div class="orb accent"></div>
+    </div>
+
+    <!-- 🧭 Navigation -->
+    <nav>
+        <span class="nav-brand">Pokédex X</span>
+        <button class="nav-btn active" onclick="location.reload()">Home</button>
+        <button class="nav-btn" id="favsToggleBtn" onclick="toggleFavoritesSection()">
+            <i class="fa-solid fa-heart" style="color: #ef4444; margin-right: 4px;"></i> Favorites
+        </button>
+        <button class="nav-btn" onclick="toggleTheme()" id="theme-btn" aria-label="Toggle Theme">
+            <i class="fa-solid fa-sun"></i>
+        </button>
+    </nav>
+
+    <!-- 🔍 Main Interface -->
+    <main>
+        <!-- Pokémon of the Day Banner -->
+        <div class="potd-banner" id="potdBanner">
+            <div class="potd-content">
+                <span class="potd-badge"><i class="fa-solid fa-star"></i> Pokémon of the Day</span>
+                <span class="potd-name" id="potdName">---</span>
+            </div>
+            <button class="potd-btn" id="potdBtn">Catch Daily</button>
+        </div>
+
+        <!-- Search Area -->
+        <div class="search-container">
+            <i class="fa-solid fa-search search-icon"></i>
+            <input type="text" class="search-box" id="searchInput" placeholder="Search Pokémon (e.g., Pikachu)..." autocomplete="off">
+            
+            <!-- Autocomplete Dropdown -->
+            <div class="suggestions" id="suggestionsBox"></div>
+        </div>
+
+        <!-- ⭐ Favorites Section -->
+        <div class="favorites-section" id="favoritesSection">
+            <div class="favorites-header">
+                <h3><i class="fa-solid fa-heart" style="color: #ef4444; margin-right: 6px;"></i> Your Favorites</h3>
+                <button class="clear-favs-btn" onclick="clearAllFavorites()">Clear All</button>
+            </div>
+            <div class="favorites-grid" id="favoritesGrid">
+                <p class="no-favorites-msg">No favorites added yet. Click the heart icon on a Pokémon card!</p>
+            </div>
+        </div>
+
+        <!-- Status Indicators -->
+        <div class="loader-container" id="loader">
+            <div class="pokeball-loader">
+                <div class="pokeball-loader-top"></div>
+                <div class="pokeball-loader-bottom"></div>
+                <div class="pokeball-loader-center"></div>
+            </div>
+            <p class="loader-text">Summoning Pokémon...</p>
+        </div>
+        
+        <div class="error-container" id="errorContainer" style="display: none;">
+            <div class="error-msg" id="errorMsg"></div>
+            <div class="error-suggestions" id="errorSuggestions"></div>
+        </div>
+
+        <!-- 🃏 Pokemon Card -->
+        <div class="card" id="pokemonCard">
+            <!-- Action Buttons Row -->
+            <div class="card-actions">
+                <button class="card-action-btn fav-btn" id="favCardBtn" onclick="toggleFavoriteCurrent()" aria-label="Favorite">
+                    <i class="fa-regular fa-heart"></i>
+                </button>
+                <button class="card-action-btn share-btn" id="shareCardBtn" onclick="shareCurrentPokemon()" aria-label="Share">
+                    <i class="fa-solid fa-share-nodes"></i>
+                </button>
+                <button class="card-action-btn sound-btn" onclick="playCry()" aria-label="Play Cry">
+                    <i class="fa-solid fa-volume-high"></i>
+                </button>
+            </div>
+            
+            <div class="card-content">
+                <div class="card-header">
+                    <span class="poke-id" id="pokeId">#000</span>
+                    <span class="poke-hp">
+                        <i class="fa-solid fa-heart" style="color:#ef4444; margin-right:4px;"></i> 
+                        <span id="hpVal">0</span> HPs   
+                    </span>
+                </div>
+
+                <div class="poke-img-container">
+                    <div class="poke-shadow"></div>
+                    <img id="pokeImg" class="poke-img" src="" alt="Pokemon" loading="lazy">
+                </div>
+
+                <h2 class="poke-name" id="pokeName">---</h2>
+
+                <div class="types" id="typesContainer">
+                    <!-- Badges injected via JS -->
+                </div>
+
+                <div class="stats-container" id="statsContainer">
+                    <!-- Stats bars injected via JS -->
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- App Logic -->
+    <script src="script.js"></script>
+</body>
+</html>
