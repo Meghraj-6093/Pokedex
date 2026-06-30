@@ -1,4 +1,4 @@
-const CACHE_NAME = 'pokedex-pro-v1';
+const CACHE_NAME = 'pokedex-pro-v3';
 const ASSETS = [
   './',
   './index.html',

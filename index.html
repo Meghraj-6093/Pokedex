@@ -90,26 +90,28 @@
 
         <!-- 🃏 Pokemon Card -->
         <div class="card" id="pokemonCard">
-            <!-- Action Buttons Row -->
-            <div class="card-actions">
-                <button class="card-action-btn fav-btn" id="favCardBtn" onclick="toggleFavoriteCurrent()" aria-label="Favorite">
-                    <i class="fa-regular fa-heart"></i>
-                </button>
-                <button class="card-action-btn share-btn" id="shareCardBtn" onclick="shareCurrentPokemon()" aria-label="Share">
-                    <i class="fa-solid fa-share-nodes"></i>
-                </button>
-                <button class="card-action-btn sound-btn" onclick="playCry()" aria-label="Play Cry">
-                    <i class="fa-solid fa-volume-high"></i>
-                </button>
-            </div>
-            
             <div class="card-content">
                 <div class="card-header">
-                    <span class="poke-id" id="pokeId">#000</span>
-                    <span class="poke-hp">
-                        <i class="fa-solid fa-heart" style="color:#ef4444; margin-right:4px;"></i> 
-                        <span id="hpVal">0</span> HPs   
-                    </span>
+                    <div class="header-info">
+                        <span class="poke-id" id="pokeId">#000</span>
+                        <span class="poke-hp">
+                            <i class="fa-solid fa-heart" style="color:#ef4444; margin-right:4px;"></i> 
+                            <span id="hpVal">0</span> HP
+                        </span>
+                    </div>
+                    
+                    <!-- Action Buttons Row -->
+                    <div class="card-actions">
+                        <button class="card-action-btn fav-btn" id="favCardBtn" onclick="toggleFavoriteCurrent()" aria-label="Favorite">
+                            <i class="fa-regular fa-heart"></i>
+                        </button>
+                        <button class="card-action-btn share-btn" id="shareCardBtn" onclick="shareCurrentPokemon()" aria-label="Share">
+                            <i class="fa-solid fa-share-nodes"></i>
+                        </button>
+                        <button class="card-action-btn sound-btn" onclick="playCry()" aria-label="Play Cry">
+                            <i class="fa-solid fa-volume-high"></i>
+                        </button>
+                    </div>
                 </div>
 
                 <div class="poke-img-container">
