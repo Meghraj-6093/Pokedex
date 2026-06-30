@@ -117,12 +117,11 @@ body.light-mode nav {
 /* --- Main Content Area --- */
 main {
     width: 100%;
-    max-width: 500px;
-    /* Improved Placement: Increased top padding so navbar doesn't overlap */
-    padding: 140px 20px 60px;
+    max-width: 480px;
+    padding: 95px 16px 20px;
     display: flex;
     flex-direction: column;
-    gap: 3rem; /* Increased gap for better separation */
+    gap: 1.25rem;
     position: relative;
     z-index: 10;
     min-height: 100vh;
@@ -182,8 +181,8 @@ body.light-mode .suggestions { background: rgba(255, 255, 255, 0.95); }
 /* --- Pokemon Card --- */
 .card {
     background: rgba(255, 255, 255, 0.05);
-    border-radius: 32px;
-    padding: 2.5rem; /* More breathing room */
+    border-radius: 24px;
+    padding: 1.5rem; /* Reduced padding from 2.5rem */
     position: relative;
     overflow: hidden;
     backdrop-filter: blur(20px);
@@ -218,51 +217,51 @@ body.light-mode .suggestions { background: rgba(255, 255, 255, 0.95); }
     display: flex; 
     justify-content: space-between; 
     align-items: center; 
-    margin-bottom: 1.5rem; 
+    margin-bottom: 1rem; /* Reduced margin */
 }
 .header-info {
     display: flex;
     flex-direction: column;
     align-items: flex-start;
-    gap: 0.35rem;
+    gap: 0.25rem; /* Reduced gap */
 }
-.poke-id { font-size: 1.4rem; font-weight: 800; opacity: 0.3; line-height: 1; }
-.poke-hp { font-weight: 700; background: rgba(255,255,255,0.2); padding: 0.25rem 0.75rem; border-radius: 99px; font-size: 0.85rem; display: flex; align-items: center; gap: 0.3rem; line-height: 1; }
+.poke-id { font-size: 1.25rem; font-weight: 800; opacity: 0.3; line-height: 1; }
+.poke-hp { font-weight: 700; background: rgba(255,255,255,0.2); padding: 0.2rem 0.6rem; border-radius: 99px; font-size: 0.8rem; display: flex; align-items: center; gap: 0.25rem; line-height: 1; }
 
 .poke-img-container {
     position: relative;
-    height: 250px;
+    height: 170px; /* Reduced from 250px */
     display: flex;
     justify-content: center;
     align-items: center;
-    margin: 1rem 0;
+    margin: 0.5rem 0; /* Reduced margin */
 }
 
 .poke-img {
-    width: 220px;
-    height: 220px;
-    filter: drop-shadow(0 15px 30px rgba(0,0,0,0.4));
+    width: 150px; /* Reduced from 220px */
+    height: 150px; /* Reduced from 220px */
+    filter: drop-shadow(0 10px 20px rgba(0,0,0,0.4));
     z-index: 2;
-    transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275), opacity 0.4s ease;
     cursor: pointer;
 }
-.poke-img:hover { transform: scale(1.1) rotate(5deg); }
+.poke-img:hover { transform: scale(1.18) rotate(5deg); }
 .poke-img:active { transform: scale(0.95); }
 
 .poke-shadow {
     position: absolute;
-    bottom: 20px;
-    width: 140px;
-    height: 20px;
+    bottom: 5px; /* Adjusted bottom */
+    width: 110px; /* Adjusted size */
+    height: 12px;
     background: black;
     border-radius: 50%;
-    filter: blur(15px);
+    filter: blur(12px);
     opacity: 0.4;
     z-index: 1;
 }
 
 .poke-name {
-    font-size: 2.5rem;
+    font-size: 2rem; /* Reduced from 2.5rem */
     font-weight: 800;
     text-transform: capitalize;
     margin-bottom: 0.5rem;
@@ -272,23 +271,23 @@ body.light-mode .suggestions { background: rgba(255, 255, 255, 0.95); }
 }
 body.light-mode .poke-name { background: linear-gradient(to bottom, #1e293b, #475569); -webkit-background-clip: text; color: transparent; }
 
-.types { display: flex; gap: 0.5rem; justify-content: center; margin-bottom: 2rem; }
+.types { display: flex; gap: 0.5rem; justify-content: center; margin-bottom: 1.25rem; }
 .type-badge {
-    padding: 0.4rem 1.2rem;
+    padding: 0.3rem 1rem;
     border-radius: 99px;
-    font-size: 0.85rem;
+    font-size: 0.8rem;
     font-weight: 700;
     text-transform: capitalize;
     color: white;
-    box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+    box-shadow: 0 4px 10px rgba(0,0,0,0.15);
     text-shadow: 0 1px 2px rgba(0,0,0,0.3);
 }
 
 /* --- Stats Section --- */
 .stats-container {
     background: rgba(0,0,0,0.2);
-    border-radius: 20px;
-    padding: 1.5rem;
+    border-radius: 16px;
+    padding: 1rem;
     backdrop-filter: blur(5px);
 }
 body.light-mode .stats-container { background: rgba(255,255,255,0.5); }
@@ -296,8 +295,8 @@ body.light-mode .stats-container { background: rgba(255,255,255,0.5); }
 .stat-row {
     display: flex;
     align-items: center;
-    margin-bottom: 0.8rem;
-    font-size: 0.85rem;
+    margin-bottom: 0.55rem;
+    font-size: 0.8rem;
 }
 .stat-row:last-child { margin-bottom: 0; }
 
@@ -534,7 +533,6 @@ body.light-mode .error-suggest-link {
     border-radius: 20px;
     padding: 1rem 1.5rem;
     backdrop-filter: blur(10px);
-    margin-bottom: -1rem;
     box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1);
 }
 
